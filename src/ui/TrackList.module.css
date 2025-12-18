@@ -1,0 +1,26 @@
+.tracks{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.track{
+    border: 1px solid #747bff;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.title{
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.track.selected{
+    border-color: #ffc464;
+}

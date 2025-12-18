@@ -1,6 +1,7 @@
 // import { useState, useEffect } from "react";
 import { Trackitem } from "./TrackItem";
 import { useTracks } from "../bll/useTracks";
+import styles from './TrackList.module.css'
 // import type {TrackListItemResource} from "../dal/api"
 // import { getTracks } from "../dal/api";
 
@@ -53,7 +54,7 @@ export function TrackList({ selectedTrackId, onTrackSelected } : TrackListProps)
                 <button onClick={handleResetClick}>reset selection</button>
             </div>
             <div>
-                <ul>
+                <ul className={styles.tracks}>
                     {tracks.map((track) => {
                         return (
                             <Trackitem

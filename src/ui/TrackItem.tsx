@@ -1,21 +1,32 @@
-import type {TrackListItemResource} from "../dal/api"
+import clsx from "clsx"
+import type { TrackListItemResource } from "../dal/api"
+import styles from './TrackList.module.css'
 
 
-type TrackitemProps={
+type TrackitemProps = {
     track: TrackListItemResource,
     isSelected: boolean,
-    onSelect: (trackId:string) => void
+    onSelect: (trackId: string) => void
 
 }
 
-export function Trackitem({track, isSelected, onSelect}:TrackitemProps) {
 
-    const handleClick =() => onSelect?.(track.id)
+
+export function Trackitem({ track, isSelected, onSelect }: TrackitemProps) {
+
+    const handleClick = () => onSelect?.(track.id)
+
+
+    const className = clsx({
+        [styles.track]: true,
+        [styles.selected]: isSelected,
+    }
+    )
 
 
     return (
-        <li key={track.id} style={{ border: isSelected ? '1px solid orange' : 'none' }}>
-            <div onClick={handleClick}>
+        <li key={track.id} className={className}>
+            <div className={styles.title} onClick={handleClick}>
                 {track.attributes.title}
             </div>
 
